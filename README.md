@@ -1,4 +1,8 @@
 # echo-logrus
+[![CircleCI](https://circleci.com/gh/neko-neko/echo-logrus.svg?style=svg)](https://circleci.com/gh/neko-neko/echo-logrus)
+[![Go Report Card](https://goreportcard.com/badge/github.com/neko-neko/echo-logrus)](https://goreportcard.com/report/github.com/neko-neko/echo-logrus)
+[![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://raw.githubusercontent.com/neko-neko/echo-logrus/master/LICENSE)
+
 ## Overview
 Middleware echo-logrus is a [logrus](https://github.com/sirupsen/logrus) logger support for [Echo](https://github.com/labstack/echo).  
 This middleware is working on echo v3.
