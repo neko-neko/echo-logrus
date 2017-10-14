@@ -5,10 +5,10 @@ import (
 	"time"
 
 	"github.com/labstack/echo"
-	"github.com/neko-neko/echo-logrus-middleware/log"
+	"github.com/neko-neko/echo-logrus/log"
 )
 
-// Logger returns a middleware that logs HTTP requests.
+// MyLogger returns a middleware that logs HTTP requests.
 func Logger() echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {

@@ -8,18 +8,18 @@ import (
 	"github.com/labstack/gommon/log"
 )
 
-// Logger extend logrus.Logger
-type Logger struct {
+// MyLogger extend logrus.MyLogger
+type MyLogger struct {
 	*logrus.Logger
 }
 
 // Singleton logger
-var singletonLogger = &Logger{
+var singletonLogger = &MyLogger{
 	Logger: logrus.New(),
 }
 
-// Logger return singleton logger
-func Logger() *Logger {
+// MyLogger return singleton logger
+func Logger() *MyLogger {
 	return singletonLogger
 }
 
@@ -160,61 +160,61 @@ func toEchoLevel(level logrus.Level) log.Lvl {
 	return log.OFF
 }
 
-// Return logger io.Writer
-func (l *Logger) Output() io.Writer {
+// Output return logger io.Writer
+func (l *MyLogger) Output() io.Writer {
 	return l.Out
 }
 
-// Set logger io.Writer
-func (l *Logger) SetOutput(w io.Writer) {
+// SetOutput logger io.Writer
+func (l *MyLogger) SetOutput(w io.Writer) {
 	l.Out = w
 }
 
-// Return logger level
-func (l *Logger) Level() log.Lvl {
+// Level return logger level
+func (l *MyLogger) Level() log.Lvl {
 	return toEchoLevel(l.Logger.Level)
 }
 
-// Set logger level
-func (l *Logger) SetLevel(v log.Lvl) {
+// SetLevel logger level
+func (l *MyLogger) SetLevel(v log.Lvl) {
 	l.Logger.Level = toLogrusLevel(v)
 }
 
-// Return logger fomatter
-func (l *Logger) Formatter() logrus.Formatter {
+// Formatter return logger formatter
+func (l *MyLogger) Formatter() logrus.Formatter {
 	return l.Logger.Formatter
 }
 
-// Set logger formatter
+// SetFormatter logger formatter
 // Only support logrus formatter
-func (l *Logger) SetFormatter(formatter logrus.Formatter) {
+func (l *MyLogger) SetFormatter(formatter logrus.Formatter) {
 	l.Logger.Formatter = formatter
 }
 
-// Return logger prefix
+// Prefix return logger prefix
 // This function do nothing
-func (l *Logger) Prefix() string {
+func (l *MyLogger) Prefix() string {
 	return ""
 }
 
-// Set logger prefix
+// SetPrefix logger prefix
 // This function do nothing
-func (l *Logger) SetPrefix(p string) {
+func (l *MyLogger) SetPrefix(p string) {
 	// do nothing
 }
 
-// Output message of print level
-func (l *Logger) Print(i ...interface{}) {
+// Print output message of print level
+func (l *MyLogger) Print(i ...interface{}) {
 	l.Logger.Print(i...)
 }
 
-// Output format message of print level
-func (l *Logger) Printf(format string, args ...interface{}) {
+// Printf output format message of print level
+func (l *MyLogger) Printf(format string, args ...interface{}) {
 	l.Logger.Printf(format, args...)
 }
 
-// Output json of print level
-func (l *Logger) Printj(j log.JSON) {
+// Printj output json of print level
+func (l *MyLogger) Printj(j log.JSON) {
 	b, err := json.Marshal(j)
 	if err != nil {
 		panic(err)
@@ -222,18 +222,18 @@ func (l *Logger) Printj(j log.JSON) {
 	l.Logger.Println(string(b))
 }
 
-// Output message of debug level
-func (l *Logger) Debug(i ...interface{}) {
+// Debug output message of debug level
+func (l *MyLogger) Debug(i ...interface{}) {
 	l.Logger.Info(i...)
 }
 
-// Output format message of debug level
-func (l *Logger) Debugf(format string, args ...interface{}) {
+// Debugf output format message of debug level
+func (l *MyLogger) Debugf(format string, args ...interface{}) {
 	l.Logger.Debugf(format, args...)
 }
 
-// Output message of debug level
-func (l *Logger) Debugj(j log.JSON) {
+// Debugj output message of debug level
+func (l *MyLogger) Debugj(j log.JSON) {
 	b, err := json.Marshal(j)
 	if err != nil {
 		panic(err)
@@ -241,18 +241,18 @@ func (l *Logger) Debugj(j log.JSON) {
 	l.Logger.Debugln(string(b))
 }
 
-// Output message of info level
-func (l *Logger) Info(i ...interface{}) {
+// Info output message of info level
+func (l *MyLogger) Info(i ...interface{}) {
 	l.Logger.Info(i...)
 }
 
-// Output format message of info level
-func (l *Logger) Infof(format string, args ...interface{}) {
+// Infof output format message of info level
+func (l *MyLogger) Infof(format string, args ...interface{}) {
 	l.Logger.Infof(format, args...)
 }
 
-// Output json of info level
-func (l *Logger) Infoj(j log.JSON) {
+// Infoj output json of info level
+func (l *MyLogger) Infoj(j log.JSON) {
 	b, err := json.Marshal(j)
 	if err != nil {
 		panic(err)
@@ -260,18 +260,18 @@ func (l *Logger) Infoj(j log.JSON) {
 	l.Logger.Infoln(string(b))
 }
 
-// Output message of warn level
-func (l *Logger) Warn(i ...interface{}) {
+// Warn output message of warn level
+func (l *MyLogger) Warn(i ...interface{}) {
 	l.Logger.Warn(i...)
 }
 
-// Output format message of warn level
-func (l *Logger) Warnf(format string, args ...interface{}) {
+// Warnf output format message of warn level
+func (l *MyLogger) Warnf(format string, args ...interface{}) {
 	l.Logger.Warnf(format, args...)
 }
 
-// Output json of warn level
-func (l *Logger) Warnj(j log.JSON) {
+// Warnj output json of warn level
+func (l *MyLogger) Warnj(j log.JSON) {
 	b, err := json.Marshal(j)
 	if err != nil {
 		panic(err)
@@ -279,18 +279,18 @@ func (l *Logger) Warnj(j log.JSON) {
 	l.Logger.Warnln(string(b))
 }
 
-// Output message of error level
-func (l *Logger) Error(i ...interface{}) {
+// Error output message of error level
+func (l *MyLogger) Error(i ...interface{}) {
 	l.Logger.Error(i...)
 }
 
-// Output format message of error level
-func (l *Logger) Errorf(format string, args ...interface{}) {
+// Errorf output format message of error level
+func (l *MyLogger) Errorf(format string, args ...interface{}) {
 	l.Logger.Errorf(format, args...)
 }
 
-// Output json of error level
-func (l *Logger) Errorj(j log.JSON) {
+// Errorj output json of error level
+func (l *MyLogger) Errorj(j log.JSON) {
 	b, err := json.Marshal(j)
 	if err != nil {
 		panic(err)
@@ -298,18 +298,18 @@ func (l *Logger) Errorj(j log.JSON) {
 	l.Logger.Errorln(string(b))
 }
 
-// Output message of fatal level
-func (l *Logger) Fatal(i ...interface{}) {
+// Fatal output message of fatal level
+func (l *MyLogger) Fatal(i ...interface{}) {
 	l.Logger.Fatal(i...)
 }
 
-// Output format message of fatal level
-func (l *Logger) Fatalf(format string, args ...interface{}) {
+// Fatalf output format message of fatal level
+func (l *MyLogger) Fatalf(format string, args ...interface{}) {
 	l.Logger.Fatalf(format, args...)
 }
 
-// Output json of fatal level
-func (l *Logger) Fatalj(j log.JSON) {
+// Fatalj output json of fatal level
+func (l *MyLogger) Fatalj(j log.JSON) {
 	b, err := json.Marshal(j)
 	if err != nil {
 		panic(err)
@@ -317,18 +317,18 @@ func (l *Logger) Fatalj(j log.JSON) {
 	l.Logger.Fatalln(string(b))
 }
 
-// Output message of panic level
-func (l *Logger) Panic(i ...interface{}) {
+// Panic output message of panic level
+func (l *MyLogger) Panic(i ...interface{}) {
 	l.Logger.Panic(i...)
 }
 
-// Output format message of panic level
-func (l *Logger) Panicf(format string, args ...interface{}) {
+// Panicf output format message of panic level
+func (l *MyLogger) Panicf(format string, args ...interface{}) {
 	l.Logger.Panicf(format, args...)
 }
 
-// Output json of panic level
-func (l *Logger) Panicj(j log.JSON) {
+// Panicj output json of panic level
+func (l *MyLogger) Panicj(j log.JSON) {
 	b, err := json.Marshal(j)
 	if err != nil {
 		panic(err)
