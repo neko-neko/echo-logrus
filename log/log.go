@@ -18,7 +18,7 @@ var singletonLogger = &MyLogger{
 	Logger: logrus.New(),
 }
 
-// MyLogger return singleton logger
+// Logger return singleton logger
 func Logger() *MyLogger {
 	return singletonLogger
 }

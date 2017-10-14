@@ -8,7 +8,7 @@ import (
 	"github.com/neko-neko/echo-logrus/log"
 )
 
-// MyLogger returns a middleware that logs HTTP requests.
+// Logger returns a middleware that logs HTTP requests.
 func Logger() echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
