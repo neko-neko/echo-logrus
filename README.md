@@ -24,24 +24,24 @@ import (
 	"os"
 	"time"
 
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
 	"github.com/Sirupsen/logrus"
+	"github.com/labstack/echo"
+	echoLog "github.com/labstack/gommon/log"
 	"github.com/neko-neko/echo-logrus/log"
-	customMiddleware "github.com/neko-neko/echo-logrus/middleware"
+	"github.com/neko-neko/echo-logrus/middleware"
 )
 
 func main() {
 	e := echo.New()
 
 	// Logger
-	log.GetLogger().SetOutput(os.Stdout)
-	log.GetLogger().SetLevel(log.INFO)
-	log.GetLogger().SetFormatter(&logrus.JSONFormatter{
+	log.Logger().SetOutput(os.Stdout)
+	log.Logger().SetLevel(echoLog.INFO)
+	log.Logger().SetFormatter(&logrus.JSONFormatter{
 		TimestampFormat: time.RFC3339,
 	})
-	e.Logger = log.GetLogger()
-	e.Use(customMiddleware.Logger())
+	e.Logger = log.Logger()
+	e.Use(middleware.Logger())
 	log.Info("Logger enabled!!")
 
 	e.Logger.Fatal(e.Start(":1323"))
