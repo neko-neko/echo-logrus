@@ -1,3 +1,4 @@
+// Package log wrapped logrus functions
 package log
 
 import (

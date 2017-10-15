@@ -1,3 +1,4 @@
+// Package middleware provides echo request and response output log
 package middleware
 
 import (
