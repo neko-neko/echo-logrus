@@ -1,5 +1,5 @@
 # echo-logrus
-[![CircleCI](https://circleci.com/gh/neko-neko/echo-logrus.svg?style=svg)](https://circleci.com/gh/neko-neko/echo-logrus)
+[![Build Status](https://travis-ci.org/neko-neko/echo-logrus.svg?branch=master)](https://travis-ci.org/neko-neko/echo-logrus)
 [![Go Report Card](https://goreportcard.com/badge/github.com/neko-neko/echo-logrus)](https://goreportcard.com/report/github.com/neko-neko/echo-logrus)
 [![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://raw.githubusercontent.com/neko-neko/echo-logrus/master/LICENSE)
 
