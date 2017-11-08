@@ -31,8 +31,8 @@ import (
 	"github.com/Sirupsen/logrus"
 	"github.com/labstack/echo"
 	echoLog "github.com/labstack/gommon/log"
+	"github.com/neko-neko/echo-logrus"
 	"github.com/neko-neko/echo-logrus/log"
-	"github.com/neko-neko/echo-logrus/middleware"
 )
 
 func main() {
