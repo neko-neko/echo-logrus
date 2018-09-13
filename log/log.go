@@ -225,7 +225,7 @@ func (l *MyLogger) Printj(j log.JSON) {
 
 // Debug output message of debug level
 func (l *MyLogger) Debug(i ...interface{}) {
-	l.Logger.Info(i...)
+	l.Logger.Debug(i...)
 }
 
 // Debugf output format message of debug level
