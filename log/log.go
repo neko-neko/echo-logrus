@@ -181,6 +181,13 @@ func (l *MyLogger) SetLevel(v log.Lvl) {
 	l.Logger.Level = toLogrusLevel(v)
 }
 
+// SetHeader logger header
+// Managed by Logrus itself
+// This function do nothing
+func (l *MyLogger) SetHeader(h string) {
+	// do nothing	
+}
+
 // Formatter return logger formatter
 func (l *MyLogger) Formatter() logrus.Formatter {
 	return l.Logger.Formatter
