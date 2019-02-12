@@ -2,9 +2,7 @@ language: go
 go:
   - 1.11
   - master
-
 os:
   - linux
-
-before_install:
-  - go get -t -v ./...
+script:
+  - GO111MODULE=on go build
