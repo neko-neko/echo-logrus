@@ -19,12 +19,6 @@ $ dep ensure -add github.com/neko-neko/echo-logrus
 $ go get github.com/neko-neko/echo-logrus/v2
 ```
 
-### Other users
-Run this.  
-```bash
-$ go get github.com/neko-neko/echo-logrus
-```
-
 ## Example
 ```go
 package main
