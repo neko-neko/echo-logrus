@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/sirupsen/logrus"
 	"github.com/labstack/gommon/log"
+	"github.com/sirupsen/logrus"
 )
 
 // MyLogger extend logrus.MyLogger
@@ -185,7 +185,7 @@ func (l *MyLogger) SetLevel(v log.Lvl) {
 // Managed by Logrus itself
 // This function do nothing
 func (l *MyLogger) SetHeader(h string) {
-	// do nothing	
+	// do nothing
 }
 
 // Formatter return logger formatter
