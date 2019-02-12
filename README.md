@@ -5,13 +5,18 @@
 
 ## Overview
 Middleware echo-logrus is a [logrus](https://github.com/sirupsen/logrus) logger support for [Echo](https://github.com/labstack/echo).  
-This middleware is working on echo v3.
+This middleware is working on Echo v4.
 
 ## Getting Started
 ### For [dep](https://github.com/golang/dep) users
 When your project top dir run this.  
 ```bash
 $ dep ensure -add github.com/neko-neko/echo-logrus
+```
+
+### Modules users
+```bash
+$ go get github.com/neko-neko/echo-logrus/v2
 ```
 
 ### Other users
@@ -28,11 +33,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/Sirupsen/logrus"
-	"github.com/labstack/echo"
+	"github.com/sirupsen/logrus"
+	"github.com/labstack/echo/v4"
 	echoLog "github.com/labstack/gommon/log"
-	"github.com/neko-neko/echo-logrus"
-	"github.com/neko-neko/echo-logrus/log"
+	"github.com/neko-neko/echo-logrus/v2"
+	"github.com/neko-neko/echo-logrus/v2/log"
 )
 
 func main() {
