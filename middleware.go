@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/labstack/echo/v4"
-	"github.com/neko-neko/echo-logrus/log"
+	"github.com/neko-neko/echo-logrus/v2/log"
 )
 
 // Logger returns a middleware that logs HTTP requests.
