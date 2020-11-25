@@ -9,7 +9,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-// MyLogger extend logrus.MyLogger
+// MyLogger extend logrus.Logger
 type MyLogger struct {
 	*logrus.Logger
 }
